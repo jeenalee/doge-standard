@@ -3,22 +3,28 @@
 <link href="https://resources.whatwg.org/standard.css" rel="stylesheet">
 <link href="https://s-media-cache-ak0.pinimg.com/736x/9e/82/03/9e8203bacc73b1591a2c31bec413332f.jpg" rel="icon">
 
-<h1 id="doge-api">Doge API</h1>
+<h1 id="doge-api">Doge</h1>
+
+<dl>
+ <dt>Author:
+   <dd><a href="https://www.twitter.com/theJeenaLee">Jeena Lee</a></dd>
+ <dt>Related Publication:
+   <dd><a href="http://jeenalee.com">How to implement a new DOM API for Servo</a></dd>
+</dl>
 
 <h2 class="no-num no-toc short" id="abstract">Abstract</h2>
-  <p>This "spec" is used for <a href="">Jeena's tutorial</a> on how to implement a DOM interface for <a href="https://github.com/servo/servo/">Servo</a>.</p>
-  <p>The Doge standard defines process related to doge-ing. <strong>THIS IS NOT A REAL STANDARD.</strong><p>
+  <p>The Doge standard defines process related to doge-ing.
 
 <h2 id="doge-class">Doge class</h2>
 
-<pre class="idl">typedef sequence&lt;ByteString&gt;&gt; <dfn id="dogeinit">DogeInit</dfn>;</pre>
+<pre class="idl">typedef sequence&lt;DOMString&gt; <dfn id="dogeinit">DogeInit</dfn>;</pre>
 
 
 <pre class="idl">[<a href="#dom-doge" title="dom-Doge">Constructor</a>(optional <a href="#dogeinit">DogeInit</a> <var>init</var>),
  Exposed=(Window,Worker)]
 interface <dfn data-dfn-type="interface" data-export="" id="doge">Doge</dfn> {
-  void <a href="#dom-doge-append" title="dom-Doge-append">append</a>(ByteString <var>word</var>);
-  ByteString <a href="#dom-doge-random" title="dom-Doge-random">random</a>();
+  void <a href="#dom-doge-append" title="dom-Doge-append">append</a>(DOMString <var>word</var>);
+  DOMString <a href="#dom-doge-random" title="dom-Doge-random">random</a>();
 };
 </pre>
 
@@ -32,7 +38,7 @@ constructor, when invoked, must run these steps:
 <ol>
  <li><p>Let <var>doge</var> be a new <a href="#doge"><code>Doge</code></a> object.
 
- <li><p>If <var>init</var> is given, for each <var>word</var> in <var>init</var>, append <var>word</var> to the associated <var>such list</var>. Rethrow any exception.
+ <li><p>If <var>init</var> is given, for each <var>word</var> in <var>init</var>, append <var>word</var> to the associated <var>such list</var>.
 
  <li><p>Return <var>doge</var>.
 </ol>
